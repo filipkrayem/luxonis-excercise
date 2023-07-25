@@ -32,8 +32,12 @@ app.get<{}, MessageResponse>("/", (_req, res) => {
   });
 });
 
-app.get<{}, FlatsResponse>("/flats", async (_req, res) => {
-  const flats = await getFlats(pool);
+// NOTE: I would also normally use a router instead of using app directly
+app.get<{}, FlatsResponse>("/flats", async (req, res) => {
+  const page = Number(req.query.page) || 1;
+  const pageSize = 50;
+
+  const flats = await getFlats(pool, page, pageSize);
 
   return res.json(flats);
 });

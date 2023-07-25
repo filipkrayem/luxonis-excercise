@@ -7,7 +7,14 @@
 import { Pool } from "pg";
 import { Flat } from "../types/models";
 
-export const getFlats = async (pool: Pool): Promise<Flat[]> => {
-  const query = await pool.query<Flat>("SELECT * FROM flats");
+export const getFlats = async (
+  pool: Pool,
+  page: number,
+  pageSize: number
+): Promise<Flat[]> => {
+  const query = await pool.query<Flat>(
+    `SELECT * FROM flats LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}`
+  );
+
   return query.rows;
 };
