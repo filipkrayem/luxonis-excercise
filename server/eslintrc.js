@@ -1,4 +1,6 @@
-const path = require("path")
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+import { join } from "path";
+
 /** @type {import("eslint").Linter.Config} */
 const config = {
   overrides: [
@@ -31,4 +33,5 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
+

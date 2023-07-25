@@ -1,7 +1,7 @@
 {
-  "name": "express-api-starter-ts",
-  "version": "1.2.0",
-  "description": " A basic starter for an express.js API with Typescript",
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A simple express server with typescript",
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
@@ -12,11 +12,6 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
-  },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
@@ -32,6 +27,7 @@
     "@types/jest": "^29.5.2",
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.2.5",
+    "@types/pg": "^8.10.2",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
