@@ -7,7 +7,7 @@ interface FlatDetailProps {
 export default function FlatDetail(props: FlatDetailProps) {
   const { flat } = props;
   return (
-    <div className="flex flex-1 flex-col bg-white w-auto rounded-3xl p-12 gap-12">
+    <div className="flex flex-1 flex-col bg-white w-auto rounded-3xl p-12 gap-12 max-h-paddedScreen overflow-y-auto xl:min-w-[400px]">
       <div className="flex flex-col w-full h-auto">
         <img src={flat.imageSrc} className="rounded-2xl" />
       </div>

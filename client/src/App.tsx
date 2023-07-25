@@ -18,7 +18,7 @@ function App() {
   // The actual implementation would of course vary depending on the state management system used.
   const fetchFlats = async (page: number): Promise<Flat[]> => {
     const response = await axios<Flat[]>(
-      import.meta.env.VITE_SERVER_URL + `/flats?page=${page}`
+      window.location.href + `/api/flats?page=${page}`
     );
 
     return response.data;
@@ -26,6 +26,7 @@ function App() {
 
   const handleFlatClick = (flat: Flat) => {
     setDisplayedFlat(flat);
+    window.scrollTo({ behavior: "smooth", top: 0, left: 0 });
   };
 
   const onPageChange = (page: number) => {
@@ -44,9 +45,9 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-1 w-full h-full py-10 justify-start gap-20">
-        <div className="flex flex-col gap-10 h-full bg-white p-12 rounded-3xl w-full md:w-[800px] overflow-y-auto max-h-paddedScreen">
-          <h1 className="font-bold text-3xl">Sreality flats</h1>
+      <div className="flex flex-col-reverse xl:flex-row flex-1 w-full h-full py-10 justify-start gap-20">
+        <div className="flex flex-col gap-10 h-full bg-white p-12 rounded-3xl w-full xl:w-[800px] overflow-y-auto max-h-paddedScreen pl-16 ">
+          <h1 className="font-bold text-3xl">Sreality Flats</h1>
 
           <div className="flex flex-col gap-11">
             {flats.map((flat) => (

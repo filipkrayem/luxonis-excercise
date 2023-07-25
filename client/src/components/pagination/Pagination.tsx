@@ -9,19 +9,20 @@ export default function Pagination(props: PaginationProps) {
   const { page, totalPages, onPageChange } = props;
 
   return (
-    <div className="flex flex-row gap-6 flex-1 justify-between ">
+    <div className="flex flex-row gap-3 md:gap-9 flex-1 justify-center">
       <button onClick={() => onPageChange(page - 1)} disabled={page === 1}>
         Prev
       </button>
-      {getPageArray(page, totalPages).map((pageNumber) => (
-        <PaginationButton
-          onClick={() => onPageChange(pageNumber)}
-          key={pageNumber}
-          number={pageNumber}
-          numberButton={true}
-          selected={page === pageNumber}
-        ></PaginationButton>
-      ))}
+      <div className="flex flex-row gap-2 md:gap-6">
+        {getPageArray(page, totalPages).map((pageNumber) => (
+          <PaginationButton
+            onClick={() => onPageChange(pageNumber)}
+            key={pageNumber}
+            number={pageNumber}
+            selected={page === pageNumber}
+          ></PaginationButton>
+        ))}
+      </div>
       <button
         onClick={() => onPageChange(page + 1)}
         disabled={page === totalPages}
@@ -32,10 +33,6 @@ export default function Pagination(props: PaginationProps) {
   );
 }
 
-//write a function that returns an array of numbers that are going to be used for pagination
-//always show 5 numbers, take in an argument currentPage, show 5 numbers around the current page
-//
-//
 const getPageArray = (currentPage: number, totalPages: number) => {
   if (totalPages <= 5) {
     // If the total pages are less than or equal to 5, show all pages.

@@ -12,5 +12,6 @@ export default {
       },
     },
   },
+  safelist: ["bg-red-600"],
   plugins: [],
 };

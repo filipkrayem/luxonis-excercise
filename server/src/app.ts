@@ -26,7 +26,7 @@ export const pool = new Pool({
   port: Number(process.env.PGPORT),
 });
 
-app.get<{}, MessageResponse>("/", (_req, res) => {
+app.get<{}, MessageResponse>("/api", (_req, res) => {
   res.json({
     message: "🦄🌈✨👋🌎🌍🌏✨🌈🦄",
   });

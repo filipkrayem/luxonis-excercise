@@ -10,10 +10,10 @@ export default function FlatPreview(props: FlatPreviewProps) {
 
   return (
     <div
-      className="flex justify-start items-start flex-row gap-8 cursor-pointer"
+      className="flex flex-col justify-start items-start md:flex-row gap-8 cursor-pointer"
       onClick={() => onClick(flat)}
     >
-      <div className="h-64 w-[350px] flex flex-row items-end justify-end">
+      <div className="w-full md:w-[250px] xl:w-[350px] flex">
         <img src={flat.imageSrc} alt="Flat image" />
       </div>
       <div className="flex flex-col gap-2 flex-1">

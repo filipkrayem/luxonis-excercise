@@ -11,12 +11,10 @@ export default function PaginationButton(props: PaginationButtonProps) {
 
   return (
     <button
-      className={classNames(
-        "text-lg relative w-12 h-12 rounded-full bg-zinc-100 text-body",
-        {
-          "bg-red-600 text-white": selected,
-        }
-      )}
+      className={classNames("text-lg relative w-12 h-12 rounded-full", {
+        "bg-red-600 text-white": selected,
+        "bg-zinc-100 text-body": !selected,
+      })}
       onClick={onClick}
     >
       {number}
